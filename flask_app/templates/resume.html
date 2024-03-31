@@ -1,0 +1,63 @@
+<!--
+Template provided by Eastern University  
+-->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Johnathan Milner Resume{% endblock %}</h1>
+{% endblock %}
+
+{% block nav_resume%}
+    class="active"
+{% endblock %}
+
+{% block content %}
+
+ <!-- Starts image section -->
+
+ <div class="row">
+  <div class="col-md-4">
+      <div class="thumbnail">
+          <img src="{{url_for('static', filename='profile_pic.jpg')}}" class="gallery__img" width="300"
+                      alt="Johnathan Milner Profile Picture" />
+      </div>
+</div>
+<!-- Ends image section -->
+
+
+
+<h2>Education</h2>
+
+<h3>Master of Science - Data Science <br>
+Eastern University (2022-2023)</h3>
+<li>Learned data science skills using Python, R, SQL, statistical modeling, and machine learning. </li>
+
+<h3>Bachelor of Science – Psychology <br>
+University of Calgary (2014 - 2018)</h3>
+ 
+<li>Completed an independent research project on ADHD and dementia using Qualtrics, SPSS, and statistics.</li>
+
+<h2>Work Experience</h2>
+
+<h3>Alberta Health Services – Senior Analyst (July 2023 – Current) </h3>
+<li>Create SQL queries and stored procedures to pull data from Oracle and Microsoft SQL Server databases for reports.</li>
+<li>Create and maintain Tableau dashboards that are used daily by both operational leaders and front line staff.</li>
+
+<h3>Eastern University – Graduate Assistant (January 2023 – Current) </h3>
+<li>Grade and provide feedback on approximately 250 master's level SQL assignments every seven weeks.</li>
+<li>Answer student questions by e-mail and moderate discussion board posts.</li>
+
+<h3>Alberta Health Services – Research and Evaluation Co-ordinator (April 2022 – June 2023) </h3>
+<li>Create dashboards and reports frum multiple sources using R, Python, SQL, and Tableau/Tableau Prep enabling data informed decision making.
+</li>
+<li>Communicate closely with external stakeholders and team members using meetings and emails</li>
+
+<h3>Wood's Homes – Yourh and Family Counsellor (May 2019 – April 2022) </h3>
+<li>Provide safe, structure, group care to children and adolescents with complex behavior and mental health concerns using a trauma informed lens.</li>
+
+<br><b>For more details visit my <a href = 'https://www.linkedin.com/in/johnathan-milner/'>LinkedIn Profile</a>.</b>
+  
+
+
+{% endblock %}

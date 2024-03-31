@@ -1,0 +1,42 @@
+<!--
+Template provided by Eastern University  
+-->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Nursing Home Hospitalization Model{% endblock %}</h1>
+{% endblock %}
+
+{% block nav_hosp%}
+    class="active"
+{% endblock %}
+
+{% block content %}
+
+    <!-- Starts form section -->
+</br>
+
+<!-- Starts form section -->
+<div class="form-container ">
+  <form class="form-horizontal" action = "/provider" method="post">
+    <p>Select City:</p>
+    <select name="city" method="POST, GET" action="/" class="Input">
+      {% for city in cities %}
+              <option value="{{ city }}">{{ city }}</option>
+          {% endfor %}
+    </select>
+    <div class="form-group row">
+      <label class="control-label col-sm-2" for="">&nbsp;</label>
+        <div class="col-sm-offset-2 col-sm-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+  </form>
+  <!-- Ends form section -->
+        <!-- Ends form section -->
+
+
+
+
+{% endblock %}

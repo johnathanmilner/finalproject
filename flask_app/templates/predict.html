@@ -1,0 +1,62 @@
+<!--
+Template provided by Eastern University  
+-->
+
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Nursing Home Hospitalization Predictor{% endblock %}</h1>
+{% endblock %}
+
+{% block nav_hosp%}
+    class="active"
+{% endblock %}
+
+{% block content %}
+
+<h2>Selected Nursing Home</h2>
+
+  {% for table in tables %}
+      <table>
+          <thead>
+              <tr>
+                  {% for title in titles %}
+                      <th>{{ title }}</th>
+                  {% endfor %}
+              </tr>
+          </thead>
+          <tbody>
+              {{ table|safe }}
+          </tbody>
+      </table>
+  {% endfor %}
+
+  <h2>Actual Adjusted Hospitalization Rate: {{ actual_rate }} per 1,000 resident days (long stay residents) </h2>
+  <h2>Model Prediction with Impact of Features</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="thumbnail">
+        <img src="{{url_for('static', filename='waterfall.png')}}" class="gallery__img" width="1000"
+                    alt="Waterfall Chart" />
+        <div class="caption">
+             <p><strong>Waterfall Chart showing how different characteristics affected the models prediciton for the specific nursing home selected.</strong></p>
+           </div>
+    </div>
+</div>
+</div>
+<br>
+<h2>How to Interpret</h2><br>
+
+<p>
+  <b>f(x) (top)</b>: Predicted rate. <br>
+  <b>E[f(X)] (bottom)</b>: Average rate for the subset of nursing homes used to train the model. <br>
+  Difference represents error the model was unable to predict. <br><br>
+
+  <b>Y-axis</b>: Variable names and values. <br>
+  <b><font color="blue">Blue Bars</font></b>: Variable contributed to lower prediction. <br>
+  <b><font color="red">Red Bars</font></b>: Variable contributed to a higher prediction.<br>
+  <b>Value in Bar</b>: Contribution of variable on raw predicted rate 
+</p>
+
+{% endblock %}

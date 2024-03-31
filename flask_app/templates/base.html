@@ -1,0 +1,26 @@
+<!--
+Template provided by Eastern University  
+-->
+
+<!doctype html>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<section>
+  <header>
+    <div  class="topnav">
+      <a {% block nav_about%}{% endblock %} href="{{ url_for('about') }}">About Me</a>
+      <a {% block nav_resume%}{% endblock %} href="{{ url_for('resume') }}">Resume</a>
+      <a {% block nav_hosp%}{% endblock %} href="{{ url_for('hospitalizationPredictor') }}">Hospitalization Model</a>
+      <a {% block nav_projects%}{% endblock %} href="{{ url_for('projects') }}">Projects</a>
+    </div>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
+

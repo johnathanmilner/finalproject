@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Nursing Home Hospitalization Model{% endblock %}</h1>
+  
+{% endblock %}
+
+{% block nav_hosp%}
+    class="active"
+{% endblock %}
+
+<!--
+Template provided by Eastern University  
+-->
+
+{% block content %}
+
+<p>
+Low hospitalization rates at nursing homes is associated with higher quality care, as it means that resident care needs are met at the facility without the need to disrupt the resident.
+Medicare and Medicaid funded Nursing homes in the United States report regularly the number of hospitalizations per 1,000 long-stay resident days.
+ This data, along with other measures, is available publicly in the 
+ <a href="https://data.cms.gov/provider-data/search?page=2&theme=Nursing%20homes%20including%20rehab%20services">
+  U.S. Centers for Medicare & Medicaid Services</a> website.
+</p>  
+<br>
+<p>
+  Quality improvement requires not only knowing what the current rate is, but understanding what is influencing the rate. 
+  Understanding what is affecting the rate can lead to insights of potential actions that can be done to improve the rate.
+</p>
+<br>
+<p>
+  For this project, I collected data from four different  <a href="https://data.cms.gov/provider-data/search?page=2&theme=Nursing%20homes%20including%20rehab%20services">
+    U.S. Centers for Medicare & Medicaid Services</a> data sets, analyzed which factors were correlated with hospitalization rates, and developed a machine learning model to explain how the factors affect the hospitalization rate at 11,852 nursing homes in the United States.
+</p>
+<br>
+<p>
+To get started, first answer a few questions to find the nursing home you are interested in.
+</p>
+
+    <!-- Starts form section -->
+</br>
+
+<!-- Starts form section -->
+<div class="form-container ">
+  <form class="form-horizontal" action = "/city" method="post">
+    <p>Select State:</p>
+    <select name="state" method="POST" action="/" class="Input">
+      {% for state in states %}
+              <option value="{{ state }}">{{ state }}</option>
+          {% endfor %}
+    </select>
+    <div class="form-group row">
+      <label class="control-label col-sm-2" for="">&nbsp;</label>
+        <div class="col-sm-offset-2 col-sm-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+  </form>
+  <!-- Ends form section -->
+        <!-- Ends form section -->
+
+
+
+
+{% endblock %}

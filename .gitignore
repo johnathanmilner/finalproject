@@ -1,0 +1,10 @@
+Project Completion/venv/
+Project Completion/.ipynb_checkpoints/
+**__pycache__/
+Project Completion/flask_app/venv-flask/
+**waterfall.png
+**.DS_store
+**.ini
+**venv/
+**venv_flask/
+**.ipynb_checkpoints/
